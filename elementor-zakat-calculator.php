@@ -1,9 +1,11 @@
 <?php
 /*
-Plugin Name: Elementor Zakat Calculator
+Plugin Name: Zakat Calculator Elementor 
 Description: A simple Elementor widget to calculate Zakat.
 Version: 1.0
-Author: Your Name
+Author: MKS Entertainment & Technologies
+Author URI: https://mkshishir.pages.dev/
+Text Domain: zakat-calculator-elementor
 */
 
 // Exit if accessed directly

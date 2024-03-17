@@ -1,41 +1,36 @@
 /* Custom styles for the Zakat Calculator widget */
 
 /* Container */
+
+
 .zakat-calculator-container {
+    
+    
     margin-bottom: 5em;
     box-sizing: border-box;
-    padding: 1em;
     border: 1px solid transparent;
     border-radius: 0.5rem;
     position: relative; /* Required for absolute positioning of pseudo-element */
     overflow: hidden; /* Hide overflow to prevent background image from overflowing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    min-height: 18em;
 
-    /* Background Image */
-    background-image: url('../img/zakat-bg.jpeg'); /* Adjust path as needed */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+     /* Background Image */
+     background-image: url('../img/zakat-bg.jpeg'); /* Adjust path as needed */
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
 }
 
-/* Overlay */
-.zakat-calculator-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.938); /* Adjust opacity (last value) as needed */
-    z-index: -1; /* Ensure overlay is above background image */
-}
+.zakat-calculator-container h1,
+.zakat-calculator-container h2,
+.zakat-calculator-container h3,
 
-/* Content */
-.zakat-calculator-content {
-    position: relative; /* Ensure position context for box shadow */
-    z-index: 10; /* Ensure content is above overlay */
+.zakat-calculator-container h4,
+.zakat-calculator-container h5,
+.zakat-calculator-container h6{
+    color: #fff;
 }
-
 
 
 /* Label */
@@ -43,13 +38,14 @@
     font-size: 16px;
     color: #fff;
     margin-bottom: 10px;
+    
 }
 
 /* Input */
 .zakat-calculator-input {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #000;
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 10px;
@@ -73,6 +69,7 @@
 /* Result */
 .zakat-calculator-result {
     margin-top: 20px;
+    
 }
 
 .zakat-calculator-result-title {
@@ -84,5 +81,11 @@
 .zakat-calculator-result-amount {
     font-size: 24px;
     font-weight: bold;
-    color: #e6d700;
+    color: #fff;
+}
+.zakat-overlay{
+    background-color: #000000c0;
+    min-height: 18em;
+    width: 100%;
+    padding: 1em;
 }
