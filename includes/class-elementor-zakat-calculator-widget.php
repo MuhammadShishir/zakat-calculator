@@ -150,7 +150,7 @@ class Elementor_Zakat_Calculator_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'overlay_style_section',
             [
-                'label' => __('Overlay Style', 'elementor-zakat-calculator'),
+                'label' => __('Background Style', 'elementor-zakat-calculator'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -159,7 +159,7 @@ class Elementor_Zakat_Calculator_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'overlay_color',
             [
-                'label' => __('Overlay Color', 'elementor-zakat-calculator'),
+                'label' => __('Background Overlay Color', 'elementor-zakat-calculator'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .zakat-overlay' => 'background-color: {{VALUE}};',
