@@ -1,0 +1,13 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <text transform="matrix(28.4429 0 0 20.619 -7152.55 -3884.36)" stroke="#000" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="24" id="svg_1" y="211.1514" x="258.47881" stroke-width="0" fill="#000000">Z</text>
+  <g id="svg_7">
+   <ellipse stroke="#000" ry="81" rx="74" id="svg_3" cy="372" cx="513" fill="#000000"/>
+   <ellipse transform="rotate(29.7258 502.5 363.5)" stroke="#000000" ry="76.5" rx="56.5" id="svg_5" cy="363.5" cx="502.5" fill="#fff"/>
+   <ellipse transform="rotate(29.7258 493.5 358.5)" stroke="#ffffff" ry="76.5" rx="56.5" id="svg_6" cy="358.5" cx="493.5" fill="#fff"/>
+   <path id="svg_2" d="m430.41,353.8142l25.5919,0l7.90809,-23.68196l7.9081,23.68196l25.5919,0l-20.70425,14.63609l7.9085,23.68196l-20.70426,-14.63648l-20.70425,14.63648l7.90851,-23.68196l-20.70425,-14.63609z" stroke="#000" fill="#000000"/>
+  </g>
+ </g>
+</svg>

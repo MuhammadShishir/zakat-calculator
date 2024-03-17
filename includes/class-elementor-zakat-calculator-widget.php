@@ -1,0 +1,87 @@
+<?php
+use Elementor\Widget_Base;
+
+if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+class Elementor_Zakat_Calculator_Widget extends Widget_Base {
+
+    public function get_name() {
+        return 'zakat_calculator';
+    }
+
+    public function get_title() {
+        return __('Zakat Calculator', 'elementor-zakat-calculator');
+    }
+
+    public function get_icon() {
+        // Define an array of icon URLs with fallbacks
+        $icons = array(
+            plugin_dir_url(__FILE__) . 'assets/img/zakat-icon.svg', // Custom Zakat icon
+            'https://example.com/default-icon.svg', // Fallback icon 1
+            'https://example.com/default-icon.png', // Fallback icon 2 (if SVG is not supported)
+        );
+
+        // Loop through the icon URLs and return the first one that exists
+        foreach ($icons as $icon_url) {
+            if (file_exists(str_replace('https://example.com', ABSPATH, $icon_url)) || file_exists(str_replace('http://example.com', ABSPATH, $icon_url))) {
+                // Generate the SVG code for the icon
+                $icon_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <image xlink:href="' . esc_url($icon_url) . '" width="24" height="24" />
+                </svg>';
+
+                return $icon_svg;
+            }
+        }
+
+        // If none of the custom icons are available, return the default Elementor widget icon
+        return 'eicon-icon';
+    }
+
+    public function get_categories() {
+        return ['basic'];
+    }
+
+    protected function _register_controls() {
+        $this->start_controls_section(
+            'section_content',
+            [
+                'label' => __('Content', 'elementor-zakat-calculator'),
+            ]
+        );
+
+        $this->add_control(
+            'label',
+            [
+                'label' => __('Label', 'elementor-zakat-calculator'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __('Enter your money amount:', 'elementor-zakat-calculator'),
+                'placeholder' => __('Enter your money amount:', 'elementor-zakat-calculator'),
+            ]
+        );
+
+        $this->end_controls_section();
+    }
+
+    protected function render() {
+        $settings = $this->get_settings_for_display();
+        ?>
+        <div class="zakat-calculator-container">
+            <form class="zakat-calculator-form">
+                <label class="zakat-calculator-label"><?php echo esc_html($settings['label']); ?></label>
+                <input type="number" class="zakat-calculator-input" step="0.01" required>
+                <button type="submit" class="zakat-calculator-submit"><?php _e('Calculate', 'elementor-zakat-calculator'); ?></button>
+            </form>
+            <div class="zakat-calculator-result" style="display: none;">
+                <h3 class="zakat-calculator-result-title"><?php _e('Zakat Amount:', 'elementor-zakat-calculator'); ?></h3>
+                <span class="zakat-calculator-result-amount"></span>
+            </div>
+        </div>
+        <?php
+    }
+}
+
+// Register the widget
+function register_elementor_zakat_calculator_widget() {
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type(new Elementor_Zakat_Calculator_Widget());
+}
+add_action('elementor/widgets/widgets_registered', 'register_elementor_zakat_calculator_widget');
