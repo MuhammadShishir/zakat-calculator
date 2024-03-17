@@ -5,6 +5,7 @@ Description: A simple Elementor widget to calculate Zakat.
 Version: 1.0
 Author: MKS Entertainment & Technologies
 Author URI: https://mkshishir.pages.dev/
+License: GPLv2 or later
 Text Domain: zakat-calculator-elementor
 */
 
