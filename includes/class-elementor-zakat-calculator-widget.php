@@ -178,6 +178,80 @@ class Elementor_Zakat_Calculator_Widget extends \Elementor\Widget_Base {
                 ],
             ]
         );
+        // Background Position control
+        $this->add_control(
+            'background_position',
+            [
+                'label' => __('Background Position', 'elementor-zakat-calculator'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'top left' => __('Top Left', 'elementor-zakat-calculator'),
+                    'top center' => __('Top Center', 'elementor-zakat-calculator'),
+                    'top right' => __('Top Right', 'elementor-zakat-calculator'),
+                    'center left' => __('Center Left', 'elementor-zakat-calculator'),
+                    'center center' => __('Center Center', 'elementor-zakat-calculator'),
+                    'center right' => __('Center Right', 'elementor-zakat-calculator'),
+                    'bottom left' => __('Bottom Left', 'elementor-zakat-calculator'),
+                    'bottom center' => __('Bottom Center', 'elementor-zakat-calculator'),
+                    'bottom right' => __('Bottom Right', 'elementor-zakat-calculator'),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .zakat-overlay' => 'background-position: {{VALUE}};',
+                ],
+            ]
+        );
+
+        // Background Size control
+        $this->add_control(
+            'background_size',
+            [
+                'label' => __('Background Size', 'elementor-zakat-calculator'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'auto' => __('Auto', 'elementor-zakat-calculator'),
+                    'cover' => __('Cover', 'elementor-zakat-calculator'),
+                    'contain' => __('Contain', 'elementor-zakat-calculator'),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .zakat-overlay' => 'background-size: {{VALUE}};',
+                ],
+            ]
+        );
+
+        // Background Repeat control
+        $this->add_control(
+            'background_repeat',
+            [
+                'label' => __('Background Repeat', 'elementor-zakat-calculator'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'repeat' => __('Repeat', 'elementor-zakat-calculator'),
+                    'no-repeat' => __('No Repeat', 'elementor-zakat-calculator'),
+                    'repeat-x' => __('Repeat Horizontally', 'elementor-zakat-calculator'),
+                    'repeat-y' => __('Repeat Vertically', 'elementor-zakat-calculator'),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .zakat-overlay' => 'background-repeat: {{VALUE}};',
+                ],
+            ]
+        );
+
+        // Background Attachment control
+        $this->add_control(
+            'background_attachment',
+            [
+                'label' => __('Background Attachment', 'elementor-zakat-calculator'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'scroll' => __('Scroll', 'elementor-zakat-calculator'),
+                    'fixed' => __('Fixed', 'elementor-zakat-calculator'),
+                    'local' => __('Local', 'elementor-zakat-calculator'),
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .zakat-overlay' => 'background-attachment: {{VALUE}};',
+                ],
+            ]
+        );
 
         $this->end_controls_section();
     }
